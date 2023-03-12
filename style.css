@@ -4,7 +4,8 @@
 }
 
 main {
-    padding-bottom: 22%;
+    /* padding-bottom: 22%; */
+    height: 200vh;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
@@ -35,7 +36,7 @@ h1 {
 .image {
     width: auto;
     height: 0;
-    transition: height 0.8s ease-in;
+    transition: height 0.8s ease-out;
     align-self: center;
 }
 
@@ -49,8 +50,12 @@ label {
 }
 
 .labelPlus {
-    width: 1%;
-    transition: all 0.8s ease-in-out;
+    width: 1.5%;
+    transition: all .5s ease-in-out;
+}
+
+.radioCheck {
+    font-size: 1.5rem;
 }
 
 .check {
@@ -63,7 +68,7 @@ label {
 }
 
 .check:checked~.image {
-    height: 20vw;
+    height: 40vh;
 }
 
 .radioCheck:hover~label .labelPlus {
@@ -87,4 +92,49 @@ label {
     input[type='radio']:checked~.radioCheck {
         color: #444444;
     }
+}
+
+@media screen and (max-width:1180px) {
+    .check:checked~.image {
+        height: 50vh;
+    }
+
+    .labelPlus {
+        width: 2%;
+    }
+
+    .radioCheck {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    main {
+        height: 150vh;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .check:checked~.image {
+        height: 30vh;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .labelPlus {
+        width: 3%;
+    }
+
+    .radioCheck {
+        font-size: 0.8rem;
+    }
+
+    main {
+        height: 100vh;
+    }
+
 }
