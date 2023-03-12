@@ -22,6 +22,7 @@ h1 {
 }
 
 .accordion {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-top: 5%;
@@ -32,18 +33,24 @@ h1 {
 }
 
 .image {
-    width: 30%;
+    width: auto;
+    height: 0;
+    transition: height 0.8s ease-in;
     align-self: center;
-    display: none;
 }
 
 label {
+    display: flex;
     justify-content: space-between;
     list-style: none;
-    color: darkblue;
     font-size: 1.5rem;
     transition: all .5s ease-out;
     cursor: pointer;
+}
+
+.labelPlus {
+    width: 1%;
+    transition: all 0.8s ease-in-out;
 }
 
 .check {
@@ -51,14 +58,33 @@ label {
     position: absolute;
 }
 
-.content:hover label {
-    color: #444444;
+.check:checked~label .labelPlus {
+    transform: rotate(45deg);
 }
 
-.check:checked+.image {
-    display: block;
+.check:checked~.image {
+    height: 20vw;
 }
 
-.checkBoxCheck:checked+.image {
-    display: block;
+.radioCheck:hover~label .labelPlus {
+    transform: rotate(45deg);
+}
+
+@media screen and (hover: hover) {
+    .accordion:hover .labelPlus {
+        transform: rotate(45deg);
+    }
+
+    .accordion:hover .image {
+        height: 20vw;
+    }
+
+    .radioCheck {
+        color: darkblue;
+    }
+
+    .content:hover .radioCheck,
+    input[type='radio']:checked~.radioCheck {
+        color: #444444;
+    }
 }
