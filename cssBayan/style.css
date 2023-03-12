@@ -92,6 +92,14 @@ label {
     input[type='radio']:checked~.radioCheck {
         color: #444444;
     }
+
+    .labelPlus {
+        display: none;
+    }
+
+    .content:hover .labelPlus {
+        display: block;
+    }
 }
 
 @media screen and (max-width:1180px) {
