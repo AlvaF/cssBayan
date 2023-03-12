@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding-bottom: 22%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    background: rgba(191, 181, 158, 0.22);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 60%;
+}
+
+h1 {
+    color: #444444;
+    font-size: 2rem;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    border-bottom: 1px solid #444444;
+    padding-bottom: 2%;
+    display: flex;
+    cursor: pointer;
+}
+
+.image {
+    width: 30%;
+    align-self: center;
+    display: none;
+}
+
+label {
+    justify-content: space-between;
+    list-style: none;
+    color: darkblue;
+    font-size: 1.5rem;
+    transition: all .5s ease-out;
+    cursor: pointer;
+}
+
+.check {
+    appearance: none;
+    position: absolute;
+}
+
+.content:hover label {
+    color: #444444;
+}
+
+.check:checked+.image {
+    display: block;
+}
+
+.checkBoxCheck:checked+.image {
+    display: block;
+}
